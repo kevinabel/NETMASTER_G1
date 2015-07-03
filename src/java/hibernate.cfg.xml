@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+    <property name="hibernate.connection.username">n</property>
+    <property name="hibernate.connection.password">n</property>
+    <mapping resource="A/NET/POJOS/Usuario.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Producto.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/TipoDocumento.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Color.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/CompraDetalle.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Comprobante.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/TipoPersona.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Compra.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Categoria.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Modelo.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/ProductoDetalle.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/VentaDetalle.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Persona.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Marca.hbm.xml"/>
+    <mapping resource="A/NET/POJOS/Venta.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

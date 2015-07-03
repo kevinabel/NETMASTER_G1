@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-jun-2015 21:38:02 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="A.NET.ENTIDAD.VentaDetalle" table="VENTA_DETALLE" schema="N" optimistic-lock="version">
+        <composite-id name="id" class="A.NET.ENTIDAD.VentaDetalleId">
+            <key-property name="idDetalleVenta" type="string">
+                <column name="ID_DETALLE_VENTA" length="8" />
+            </key-property>
+            <key-property name="idVenta" type="string">
+                <column name="ID_VENTA" length="8" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="producto" class="A.NET.ENTIDAD.Producto" fetch="select">
+            <column name="ID_PRODUCTO" length="8" />
+        </many-to-one>
+        <many-to-one name="venta" class="A.NET.ENTIDAD.Venta" update="false" insert="false" fetch="select">
+            <column name="ID_VENTA" length="8" not-null="true" />
+        </many-to-one>
+        <property name="cantidad" type="string">
+            <column name="CANTIDAD" length="100" />
+        </property>
+        <property name="precioU" type="string">
+            <column name="PRECIO_U" length="100" />
+        </property>
+        <property name="descuento" type="string">
+            <column name="DESCUENTO" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

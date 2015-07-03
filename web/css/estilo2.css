@@ -1,0 +1,48 @@
+
+.pie{
+  
+  font-size: 10px;
+  text-align: center;
+  border-radius: 0.2em;
+  color: #FA8258;
+  width: -70px;
+  height: 20px;
+  margin-top: auto;
+  margin-right: -10px;
+      
+}
+ 
+.img
+{
+margin-left: 108px;
+margin-left: 415px;
+}
+
+.registrarse
+{
+   margin-top: 180px;
+    background: gold;
+    margin-right: 300px;
+    
+}
+.row
+{
+    margin-right: -300px;
+}
+
+
+.empresa{
+    
+    background: #f2dede;
+}
+.mensaje
+{
+    text-align: center;
+    color: blue;
+        
+}
+
+.navbar-brand
+{
+   color: skyblue; 
+}

@@ -1,0 +1,78 @@
+
+#login{
+    max-width: 300px;
+    -webkit-box-shadow: 20px 20px 18px 20px rgba(48, 50, 50, 20.48);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+
+    margin-top: 10px;
+
+}
+
+.fondo{
+    background: #333; 
+    border-radius: 0.7em 0.7em 0 0;
+    width: auto;
+    height: auto;
+}
+
+
+footer
+{
+    margin-top: 20px;
+    background-color: #000;
+    border-radius: 0 0 0.5em 0.5em;
+    text-align: center;
+    height: auto;
+    background: black;
+    color: #ffffff;
+}
+
+.slider
+{
+    margin-top: 20px;
+}
+
+.texto1{
+    color: red;
+    font-size: 270%;
+    text-shadow: 5px 5px 10px rgba(255,255,255,0.5);
+    text-align: center;
+}
+.texto2{
+    color: red;
+    font-size: 100%;
+    margin-top: 20px;
+    text-shadow: 10px 10px 10px rgba(355,355,355,0.5);
+    text-align: center;
+}
+.inicio
+{
+    color: red;
+
+}
+
+.mivi
+{
+    margin-left: 0px;
+}
+.text3
+{
+    max-width: 300px;
+    -webkit-box-shadow: 20px 20px 18px 20px rgba(48, 50, 50, 20.48);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+
+    margin-top: 10px;
+    background: #dca7a7;
+    text-align: center;
+}
+.animated{
+    max-width: 300px;
+    -webkit-box-shadow: 20px 20px 18px 20px rgba(48, 50, 50, 20.48);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+    box-shadow: 0px 0px 18px 0px rgba(48, 50, 50, 0.48);
+
+    margin-top: 10px;
+
+}

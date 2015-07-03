@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-jun-2015 21:38:02 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="A.NET.ENTIDAD.Persona" table="PERSONA" schema="N" optimistic-lock="version">
+        <id name="idPersona" type="string">
+            <column name="ID_PERSONA" length="8" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tipoDocumento" class="A.NET.ENTIDAD.TipoDocumento" fetch="select">
+            <column name="ID_TIPO_DOCUMENTO" length="8" />
+        </many-to-one>
+        <many-to-one name="tipoPersona" class="A.NET.ENTIDAD.TipoPersona" fetch="select">
+            <column name="ID_TIPO_PERSONA" length="8" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="100" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="APELLIDO" length="100" />
+        </property>
+        <property name="NDocumento" type="string">
+            <column name="N_DOCUMENTO" length="100" />
+        </property>
+        <property name="ruc" type="string">
+            <column name="RUC" length="100" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="TELEFONO" length="100" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="DIRECCION" length="100" />
+        </property>
+        <set name="compras" table="COMPRA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_PROVEEDOR" length="8" />
+            </key>
+            <one-to-many class="A.NET.ENTIDAD.Compra" />
+        </set>
+        <set name="personasForIdContacto" table="CONTACTO" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="ID_EMPRESA" length="8" not-null="true" />
+            </key>
+            <many-to-many entity-name="A.NET.ENTIDAD.Persona">
+                <column name="ID_CONTACTO" length="8" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="personasForIdEmpresa" table="CONTACTO" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CONTACTO" length="8" not-null="true" />
+            </key>
+            <many-to-many entity-name="A.NET.ENTIDAD.Persona">
+                <column name="ID_EMPRESA" length="8" not-null="true" />
+            </many-to-many>
+        </set>
+        <one-to-one name="usuario" class="A.NET.ENTIDAD.Usuario"></one-to-one>
+        <set name="ventas" table="VENTA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CLIENTE" length="8" />
+            </key>
+            <one-to-many class="A.NET.ENTIDAD.Venta" />
+        </set>
+    </class>
+</hibernate-mapping>

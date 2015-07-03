@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-jun-2015 21:38:02 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="A.NET.ENTIDAD.Producto" table="PRODUCTO" schema="N" optimistic-lock="version">
+        <id name="idProducto" type="string">
+            <column name="ID_PRODUCTO" length="8" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="categoria" class="A.NET.ENTIDAD.Categoria" fetch="select">
+            <column name="ID_CATEGORIA" length="8" />
+        </many-to-one>
+        <property name="marca_modelo" type="string">
+            <column name="MARCA_MODELO" length="100" />
+        </property>
+        <many-to-one name="marca_modelo" class="A.NET.ENTIDAD.Color" fetch="select">
+            <column name="ID_COLOR" length="8" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="100" />
+        </property>
+        <property name="precioV" type="string">
+            <column name="PRECIO_V" length="100" />
+        </property>
+        <property name="codigo" type="string">
+            <column name="CODIGO" length="100" />
+        </property>
+        <property name="stock" type="string">
+            <column name="STOCK" length="100" />
+        </property>
+        <property name="stockMin" type="string">
+            <column name="STOCK_MIN" length="100" />
+        </property>
+        <set name="compraDetalles" table="COMPRA_DETALLE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_PRODUCTO" length="8" not-null="true" />
+            </key>
+            <one-to-many class="A.NET.ENTIDAD.CompraDetalle" />
+        </set>
+        <set name="ventaDetalles" table="VENTA_DETALLE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_PRODUCTO" length="8" />
+            </key>
+            <one-to-many class="A.NET.ENTIDAD.VentaDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

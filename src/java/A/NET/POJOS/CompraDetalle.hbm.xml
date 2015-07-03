@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-jun-2015 21:38:02 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="A.NET.ENTIDAD.CompraDetalle" table="COMPRA_DETALLE" schema="N" optimistic-lock="version">
+        <composite-id name="id" class="A.NET.ENTIDAD.CompraDetalleId">
+            <key-property name="idCompra" type="string">
+                <column name="ID_COMPRA" length="8" />
+            </key-property>
+            <key-property name="idProducto" type="string">
+                <column name="ID_PRODUCTO" length="8" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="compra" class="A.NET.ENTIDAD.Compra" update="false" insert="false" fetch="select">
+            <column name="ID_COMPRA" length="8" not-null="true" />
+        </many-to-one>
+        <many-to-one name="producto" class="A.NET.ENTIDAD.Producto" update="false" insert="false" fetch="select">
+            <column name="ID_PRODUCTO" length="8" not-null="true" />
+        </many-to-one>
+        <property name="cantidad" type="string">
+            <column name="CANTIDAD" length="100" />
+        </property>
+        <property name="precioU" type="string">
+            <column name="PRECIO_U" length="100" />
+        </property>
+        <property name="descuento" type="string">
+            <column name="DESCUENTO" length="100" />
+        </property>
+        <set name="productoDetalles" table="PRODUCTO_DETALLE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_COMPRA" length="8" not-null="true" />
+                <column name="ID_PRODUCTO" length="8" not-null="true" />
+            </key>
+            <one-to-many class="A.NET.ENTIDAD.ProductoDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

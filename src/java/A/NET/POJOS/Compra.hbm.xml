@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-jun-2015 21:38:02 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="A.NET.ENTIDAD.Compra" table="COMPRA" schema="N" optimistic-lock="version">
+        <id name="idCompra" type="string">
+            <column name="ID_COMPRA" length="8" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="persona" class="A.NET.ENTIDAD.Persona" fetch="select">
+            <column name="ID_PROVEEDOR" length="8" />
+        </many-to-one>
+        <many-to-one name="comprobante" class="A.NET.ENTIDAD.Comprobante" fetch="select">
+            <column name="ID_COMPROBANTE" length="8" />
+        </many-to-one>
+        <many-to-one name="usuario" class="A.NET.ENTIDAD.Usuario" fetch="select">
+            <column name="ID_USUARIO" length="8" />
+        </many-to-one>
+        <property name="serie" type="string">
+            <column name="SERIE" length="100" />
+        </property>
+        <property name="nroC" type="string">
+            <column name="NRO_C" length="100" />
+        </property>
+        <property name="fecha" type="string">
+            <column name="FECHA" length="100" />
+        </property>
+        <property name="idContacto" type="string">
+            <column name="ID_CONTACTO" length="8" />
+        </property>
+        <set name="compraDetalles" table="COMPRA_DETALLE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_COMPRA" length="8" not-null="true" />
+            </key>
+            <one-to-many class="A.NET.ENTIDAD.CompraDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

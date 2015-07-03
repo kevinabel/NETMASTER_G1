@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-schema="N"/>
+  <table-filter match-name="VENTA"/>
+  <table-filter match-name="MARCA"/>
+  <table-filter match-name="PRODUCTO_DETALLE"/>
+  <table-filter match-name="CATEGORIA"/>
+  <table-filter match-name="COMPRA"/>
+  <table-filter match-name="COMPRA_DETALLE"/>
+  <table-filter match-name="USUARIO"/>
+  <table-filter match-name="CONTACTO"/>
+  <table-filter match-name="COMPROBANTE"/>
+  <table-filter match-name="TIPO_PERSONA"/>
+  <table-filter match-name="PERSONA"/>
+  <table-filter match-name="TIPO_DOCUMENTO"/>
+  <table-filter match-name="MODELO"/>
+  <table-filter match-name="VENTA_DETALLE"/>
+  <table-filter match-name="PRODUCTO"/>
+  <table-filter match-name="COLOR"/>
+</hibernate-reverse-engineering>
